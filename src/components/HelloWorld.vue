@@ -91,6 +91,7 @@
         >
       </li>
     </ul>
+    <button @click="onClick" id="btn">click me</button>
   </div>
 </template>
 
@@ -99,6 +100,9 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
+  },
+  methods: {
+    onClick() {},
   },
 };
 </script>
