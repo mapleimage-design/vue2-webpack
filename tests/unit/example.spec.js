@@ -1,5 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import HelloWorld from "@/components/HelloWorld.vue";
+import sinon from "sinon";
 
 describe("HelloWorld.vue", () => {
   it("renders props.msg when passed", () => {
@@ -21,7 +22,10 @@ describe("HelloWorld.vue", () => {
     const wrapper = shallowMount(HelloWorld, {
       propsData: { msg },
     });
+    const clickMethodStub = sinon.stub();
+    wrapper.setMethods({ handleClick: clickMethodStub }); // @https://v1.test-utils.vuejs.org/api/wrapper/#setmethods
     await wrapper.get("#btn").trigger("click");
-    console.log(wrapper);
+    expect(clickMethodStub.called).toBe(true);
+    expect(wrapper.vm.handleClick.called).toBe(true);
   });
 });

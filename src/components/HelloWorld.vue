@@ -91,7 +91,7 @@
         >
       </li>
     </ul>
-    <button @click="onClick" id="btn">click me</button>
+    <button @click="handleClick" id="btn">click me</button>
   </div>
 </template>
 
@@ -102,7 +102,7 @@ export default {
     msg: String,
   },
   methods: {
-    onClick() {},
+    handleClick() {},
   },
 };
 </script>
