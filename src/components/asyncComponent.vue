@@ -8,15 +8,13 @@ import axios from "axios";
 export default {
   data() {
     return {
-      value: null,
+      value: "",
     };
   },
 
   methods: {
     async fetchResults() {
-      const response = await axios.get(
-        "http://jsonplaceholder.typicode.com/posts"
-      );
+      const response = await axios.get("mock/service");
       this.value = response.data;
     },
   },
