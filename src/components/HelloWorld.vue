@@ -102,7 +102,9 @@ export default {
     msg: String,
   },
   methods: {
-    handleClick() {},
+    handleClick() {
+      this.$emit("click");
+    },
   },
 };
 </script>

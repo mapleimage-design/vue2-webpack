@@ -24,6 +24,7 @@ describe("i18n.vue", () => {
       },
       fallbackLocale: "en",
       locale: "en",
+      silentFallbackWarn: true, // NOTE just for test
     });
   });
   it("i18n case 1: renders successfully", () => {
